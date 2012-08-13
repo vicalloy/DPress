@@ -226,6 +226,10 @@ div.footer p a {
     color: rgb(146, 204, 71);
 }
 
+div.tag-cloud {
+    margin-bottom: 24px;
+}
+
 div.tag-cloud a {
     font-size: 0.83em;
     padding-left: 10px;
