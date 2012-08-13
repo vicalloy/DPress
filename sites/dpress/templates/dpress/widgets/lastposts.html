@@ -1,0 +1,8 @@
+<div class="widget">
+    <h3>{% trans "Latest Posts" %}</h3>
+    <ul>
+        {% for o in lastposts %}
+        <li><a href="{{o.get_absolute_url}}">{{o}}</a></li>
+        {% endfor %}
+    </ul>
+</div>

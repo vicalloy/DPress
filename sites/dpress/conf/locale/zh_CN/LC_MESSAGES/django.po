@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-13 03:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:13
+msgid "Draft"
+msgstr "草稿"
+
+#: models.py:14
+msgid "Public"
+msgstr "发布"
+
+#: models.py:16
+msgid "title"
+msgstr "标题"
+
+#: models.py:17
+msgid "slug"
+msgstr ""
+
+#: models.py:19
+msgid "body"
+msgstr "正文"
+
+#: models.py:20
+msgid "status"
+msgstr "状态"
+
+#: models.py:21
+msgid "publish"
+msgstr "发布"
+
+#: models.py:22
+msgid "created at"
+msgstr "创建时间"
+
+#: models.py:23
+msgid "updated at"
+msgstr "更新时间"
+
+#: models.py:27
+msgid "post"
+msgstr "文章"
+
+#: models.py:28
+msgid "posts"
+msgstr "文章"
+
+#: templates/dpress/index.html:10
+msgid "Posts Tagged"
+msgstr "标签"
+
+#: templates/dpress/index.html:13 templates/dpress/widgets/monthlinks.html:2
+msgid "Archives"
+msgstr "归档"
+
+#: templates/dpress/index.html:19 templates/dpress/post.html:11
+msgid "written by"
+msgstr "作者"
+
+#: templates/dpress/index.html:19 templates/dpress/post.html:11
+msgid "on"
+msgstr ""
+
+#: templates/dpress/index.html:26 templates/dpress/post.html:19
+msgid "Tagged as"
+msgstr "标签"
+
+#: templates/dpress/widgets/firendlinks.html:2
+msgid "Firend Links"
+msgstr "友情链接"
+
+#: templates/dpress/widgets/lastposts.html:2
+msgid "Latest Posts"
+msgstr "最新文章"
+
+#: templates/dpress/widgets/pages.html:2
+msgid "Pages"
+msgstr "页面"
+
+#: templates/dpress/widgets/tags.html:4
+msgid "Tags"
+msgstr "标签"

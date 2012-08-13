@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+{% load djangohelper_tags %}
+{% get_setting "DPRESS_TITLE" "" "DPRESS_TITLE" %}
+{% get_setting "DPRESS_SUBTITLE" "" "DPRESS_SUBTITLE" %}
+{% get_setting "DPRESS_DESCN" "" "DPRESS_DESCN" %}
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>{% block head_title %} {{DPRESS_TITLE}} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/style.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/pygments.css" />
+    <script>
+      MEDIA_URL = "{{ MEDIA_URL }}";
+      {% block extra_head_script %}
+      {% endblock %}
+    </script>
+  </head>
+  <body>
+    <div class="header_container">
+      <div class="header">
+        <h1><a href="{% url dpress_index %}">{{DPRESS_TITLE}}</a></h2>
+        <h2>{{DPRESS_SUBTITLE}}</h2>
+        <h3 class="description">{{DPRESS_DESCN}}</h3>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page_inner">
+
+        <div class="contentwrapper">
+          {% block contentwrapper %}
+            contentwrapper ...
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      {% include "dpress/include/footer.html" %}
+    </div>
+
+    {% block footer_js %}
+    {% endblock %}
+
+    {% block ga %}
+      {% get_setting "GOOGLE_ANALYTICS_CODE" "" "GOOGLE_ANALYTICS_CODE" %}
+      {% if GOOGLE_ANALYTICS_CODE %}
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_CODE }}']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+      {% endif %}
+    {% endblock %}
+  </body>
+</html>

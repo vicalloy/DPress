@@ -1,0 +1,13 @@
+{% load dpress_tags %}
+
+<h3 id="feedburner"><a href="{% url dpress_feeds %}" title="Latest Post">RSS Feed</a></h3>
+
+{% include "dpress/widgets/pages.html" %}
+
+{% include "dpress/widgets/tags.html" %}
+
+{% last_post %}
+
+{% month_links %}
+
+{% include "dpress/widgets/firendlinks.html" %}

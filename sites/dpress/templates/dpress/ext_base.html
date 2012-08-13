@@ -1,0 +1,15 @@
+{% extends "dpress/base.html" %}
+
+{% block contentwrapper%}
+    <div class="contents">
+    {% block contents %}
+        contentwrapper ....
+    {% endblock %}
+    </div>
+
+    <div class="sidebar">
+    {% include "dpress/include/sidebar.html" %}
+    </div>
+
+    <br style="clear: both;" />
+{% endblock %}

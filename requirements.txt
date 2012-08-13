@@ -1,0 +1,13 @@
+Django>=1.4
+south
+dj-scaffold
+django-devserver
+django-debug-toolbar
+django_compressor
+django-filebrowser
+django-taggit
+django-taggit-templatetags
+django-pagination
+Markdown
+Pygments
+git+git://github.com/vicalloy/django-helper.git

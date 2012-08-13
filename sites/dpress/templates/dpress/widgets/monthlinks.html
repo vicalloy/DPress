@@ -1,0 +1,9 @@
+<div class="widget">
+  <h3>{% trans "Archives" %}</h3>
+	<ul class="linklist">
+	{% for d in dates reversed %}
+	<li><a href="{% url dpress_month_archive d.year d.month %}">{{ d|date:"F Y" }}</a></li>
+	{% endfor %}
+	</ul>
+</div>
+

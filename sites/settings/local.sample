@@ -1,0 +1,7 @@
+DPRESS_TITLE = ''
+DPRESS_SUBTITLE = ''
+DPRESS_DESCN = ''
+DISQUS_SHORTNAME = ''
+GOOGLE_ANALYTICS_CODE = ''
+EPIC_JS = 'dpress/epiceditor/js/epiceditor.min.js'
+EPIC_BASEPATH = '/static/dpress/epiceditor'

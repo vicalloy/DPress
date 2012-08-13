@@ -1,0 +1,10 @@
+{% load taggit_extras %}
+{% get_tagcloud as tags %}
+<div class="widget">
+  <h3>{% trans "Tags" %}</h3>
+  <div class="tag-cloud">
+    {% for tag in tags %}
+    <a href="{% url dpress_tag tag.name %}"><font size={{tag.weight|floatformat:0}}>{{tag}}</font></a>
+    {% endfor %}
+  </div>
+</div>
