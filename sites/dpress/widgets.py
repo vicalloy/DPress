@@ -22,7 +22,7 @@ class EpicEditorWidget(forms.Textarea):
         cfg = {"container": "epic_body_id", "autoSave": False, 'clientSideStorage': False}
         cfg['basePath'] = getattr(settings, 'EPIC_BASEPATH', '/static/dpress/epiceditor')
         cfg_f = {'name': 'body'}
-        cfg_f['defaultContent'] = value
+        cfg_f['defaultContent'] = value if value else ""
         cfg['file'] = cfg_f
         cfg_json = simplejson.dumps(cfg)
         hide_field = super(EpicEditorWidget, self).render(name, value, attrs)
@@ -31,11 +31,10 @@ class EpicEditorWidget(forms.Textarea):
         <div style="display: none">%s</div>
         <script type="text/javascript">
         (function($){
-            $(function(){
-                var bdEditor = new EpicEditor(%s).load(); 
-                //bdEditor.getElement('editor').body.innerHTML
-                $('#post_form').submit(function(){$('#id_body').val(bdEditor.exportFile())});
-            });
+            var bdEditor = new EpicEditor(%s).load(); 
+            $('#post_form').submit(function(){
+                $('#id_body').val(bdEditor.exportFile());
+                });
         }(grp.jQuery));
         </script>
         """ % (hide_field, simplejson.dumps(cfg), )
@@ -43,5 +42,6 @@ class EpicEditorWidget(forms.Textarea):
 
     def _media(self):
         epic_js = getattr(settings, 'EPIC_JS', 'dpress/epiceditor/js/epiceditor.min.js')
+        #epic_js = 'dpress/epiceditor/js/epiceditor.js'
         return forms.Media(js=[epic_js])
     media = property(_media)
