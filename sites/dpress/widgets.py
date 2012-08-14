@@ -33,7 +33,8 @@ class EpicEditorWidget(forms.Textarea):
         (function($){
             $(function(){
                 var bdEditor = new EpicEditor(%s).load(); 
-                $('#post_form').submit(function(){$('#id_body').val(bdEditor.getElement('editor').body.innerHTML)});
+                //bdEditor.getElement('editor').body.innerHTML
+                $('#post_form').submit(function(){$('#id_body').val(bdEditor.exportFile())});
             });
         }(grp.jQuery));
         </script>

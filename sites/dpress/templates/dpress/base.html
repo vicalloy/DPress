@@ -11,11 +11,6 @@
     <title>{% block head_title %} {{DPRESS_TITLE}} {% endblock %}</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/style.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/pygments.css" />
-    <script>
-      MEDIA_URL = "{{ MEDIA_URL }}";
-      {% block extra_head_script %}
-      {% endblock %}
-    </script>
   </head>
   <body>
     <div class="header_container">
