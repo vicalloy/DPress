@@ -8,7 +8,7 @@
 {% block contents %}
   <div class="entry">
     <h2>{{post}}</h2>
-    <p class="meta">{% trans "written by" %} {{o.author}}, {% trans "on" %} {{o.publish|date:"Y-m-d H:i"}}</p>
+    <p class="meta">{% trans "written by" %} {{post.author}}, {% trans "on" %} {{post.publish|date:"Y-m-d H:i"}}</p>
 
     <div class="text">
       <div class="document">
