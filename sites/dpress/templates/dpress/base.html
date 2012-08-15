@@ -9,8 +9,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>{% block head_title %} {{DPRESS_TITLE}} {% endblock %}</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/style.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/default/pygments.css" />
+    {% include "dpress/include/base_style.html" %}
   </head>
   <body>
     <div class="header_container">
