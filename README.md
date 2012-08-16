@@ -1,6 +1,6 @@
 # DPress
 
-DPress is a simple blog powerd by Django.
+DPress is a simple blog powered by Django.
 
 ## demo site:
 
