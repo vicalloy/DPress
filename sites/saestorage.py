@@ -10,7 +10,7 @@ try:
 except ImportError:
     from StringIO import StringIO
 
-class SaeStorage(Storage): 
+class SaeStorage(Storage):
      
     def __init__(self, location="base"
             #accesskey=settings.ACCESS_KEY, 
@@ -51,6 +51,12 @@ class SaeStorage(Storage):
             content_str = ''.join(chunk for chunk in content.chunks())
         else:
             content_str = content.read()
+        #for fake tempfile
+        if not content_str and hasattr("file"):
+            try:
+                content_str = content.file.getvalue()
+            except:
+                pass
         self._put_file(name, content_str)
         content.close()
         return name
@@ -83,10 +89,9 @@ class SaeStorage(Storage):
         
     def isdir(self, name):
         return False if name else True
-        
 
     def isfile(self, name):
-        return True if name else False
+        return self.exists(name) if name else False
         
     def modified_time(self, name):
         from datetime import datetime
@@ -108,11 +113,15 @@ class SaeStorageFile(File):
             self._size = self._storage.size(self._name)
         return self._size
 
-    def read(self):
+    def read(self, num_bytes=None):
         if not self._is_read:
             self.file = self._storage._read(self._name)
+            self.file = StringIO(self.file.getvalue())
             self._is_read = True
-        return self.file.getvalue()
+        if num_bytes:
+            return self.file.read(num_bytes)
+        else:
+            return self.file.read()
             
     def write(self, content):
         if 'w' not in self._mode:
