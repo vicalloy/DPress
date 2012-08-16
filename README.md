@@ -2,6 +2,13 @@
 
 DPress is a simple blog powerd by Django.
 
+## demo site:
+
++ site url: [http://dpress.sinaapp.com/](http://dpress.sinaapp.com/)
++ admin url: [http://dpress.sinaapp.com/admin/](http://dpress.sinaapp.com/admin/)
++ username: guest
++ password: guest
+
 ## Features
 
 + [Markdown](http://daringfireball.net/projects/markdown/)
