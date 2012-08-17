@@ -31,3 +31,8 @@ DPress is a simple blog powered by Django.
 + %mg% runserver
 + DPress Admin http://127.0.0.1:8000/admin/
 + DPress http://127.0.0.1:8000/
+
+## config
+
++ copy sites/settings/pre.sample to sites/settings/pre.py and config it.
++ copy sites/settings/local.sample to sites/settings/local.py and config it.

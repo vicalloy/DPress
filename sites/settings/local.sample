@@ -11,10 +11,20 @@ DATABASES = {
 
 #DEFAULT_FILE_STORAGE = 'saestorage.SaeStorage'
 
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/static/'
+
 DPRESS_TITLE = ''
 DPRESS_SUBTITLE = ''
 DPRESS_DESCN = ''
+
+#You should register your site to Disqus(http://disqus.com), and Disqus will give your site a shortname.
+#if no DISQUS_SHORTNAME comment system will not work.
 DISQUS_SHORTNAME = ''
+
+#http://www.google.com/analytics/
 GOOGLE_ANALYTICS_CODE = ''
-EPIC_JS = 'dpress/epiceditor/js/epiceditor.min.js'
-EPIC_BASEPATH = '/static/dpress/epiceditor'
+
+# URL prefix for EpicEditor files.
+EPIC_BASEPATH = STATIC_URL + 'dpress/epiceditor'
