@@ -1,0 +1,38 @@
+[
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2012-07-04 16:53:01",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$6c8ae$1c2942341fcdb5f67461d67c4b895dfcd21107b6",
+      "email": "admin@localhost.com",
+      "date_joined": "2012-07-04 16:51:27"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+      "username": "vicalloy",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-07-05 09:43:08",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$8d3f6$a899ee8875cb13da3ef112db1f793f58fe0d77ee",
+      "email": "user@u.cn",
+      "date_joined": "2012-07-05 09:41:50"
+    }
+  }
+]

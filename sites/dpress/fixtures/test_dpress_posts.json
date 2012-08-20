@@ -1,0 +1,37 @@
+[
+  {
+    "pk": 1,
+    "model": "dpress.post",
+    "fields": {
+      "body": "some text.",
+      "status": 2,
+      "author": 1,
+      "created_at": "2012-08-14T09:23:58",
+      "title": "DPress",
+      "updated_at": "2012-08-16T16:21:48.140",
+      "publish": "2012-08-14T09:23:58",
+      "slug": "dpress"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "taggit.tag",
+    "fields": {
+      "name": "testtag",
+      "slug": "testtag"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "taggit.taggeditem",
+    "fields": {
+      "tag": 1,
+      "content_type": [
+        "dpress",
+        "post"
+      ],
+      "object_id": 1
+    }
+  }
+
+]
