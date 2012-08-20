@@ -22,7 +22,7 @@ class EpicEditorWidget(forms.Textarea):
         cfg = {"container": "epic_body_id", "autoSave": False, 'clientSideStorage': False}
         cfg['basePath'] = getattr(settings, 'EPIC_BASEPATH', '/static/dpress/epiceditor')
         cfg_f = {'name': 'body'}
-        cfg_f['defaultContent'] = value if value else ""
+        cfg_f['defaultContent'] = value.replace('\r', '') if value else ""
         cfg['file'] = cfg_f
         cfg_json = simplejson.dumps(cfg)
         hide_field = super(EpicEditorWidget, self).render(name, value, attrs)
