@@ -39,7 +39,8 @@ class Post(models.Model):
     publish         = models.DateTimeField(_('publish'), default=datetime.now)
     created_at      = models.DateTimeField(_('created at'), default=datetime.now)
     updated_at      = models.DateTimeField(_('updated at'), auto_now=True)
-    category        = models.ForeignKey(Category, related_name="posts", blank=True, null=True, default=None)
+    category        = models.ForeignKey(Category, related_name="posts", \
+                        blank=True, null=True, default=None, on_delete=models.SET_NULL)
     tags            = TaggableManager(blank=True)
     
     class Meta:
