@@ -1,23 +1,13 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-import datetime
-import time
-
-from django.template.context import RequestContext
-from django.http import Http404
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.models import User
-from django.views.generic.list_detail import object_list
-from django.contrib import comments
 
 from taggit.models import Tag
 
-from models import Post
-
-from helper import archive_month_filter
+from .models import Post
+from .helper import archive_month_filter
 
 def index(request, username=None, tag=None, year=None, month=None,
-        template_name="dpress/index.html"):
+        category=None, template_name="dpress/index.html"):
     posts = Post.objects.filter(status=2)
     ctx = {}
     if tag:
@@ -26,11 +16,13 @@ def index(request, username=None, tag=None, year=None, month=None,
     if year and month:
         posts, t_context = archive_month_filter(year, month, posts, 'publish')
         ctx.update(t_context)
-    posts = posts.order_by("-publish")
+
+    if category:
+        posts = posts.filter(category__slug=category)
         
-    if username is not None:
-        user = get_object_or_404(User, username=username.lower())
-        posts = posts.filter(author=user)
+    if username:
+        posts = posts.filter(author__username=username)
+    posts = posts.order_by("-publish")
     ctx['posts'] = posts
     return render(request, template_name, ctx)
 

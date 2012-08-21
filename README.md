@@ -26,9 +26,10 @@ DPress is a simple blog powered by Django.
 + Clone DPress repository from git://github.com/vicalloy/DPress.git
 + use scripts/create_env.py to create DPress environment(create python virtualenv, install requirements libs)
 + use scriptsenv.bat(source env.rc) to start DPress environment.
-+ %mg%($mg in linux) is a shortcut for "python manage.py "
-+ %mg% syncdb
-+ %mg% runserver
++ $mg(%mg% in windows) is a shortcut for "python manage.py "
++ $mg syncdb
++ $mg migrate
++ $mg runserver
 + DPress Admin http://127.0.0.1:8000/admin/
 + DPress http://127.0.0.1:8000/
 

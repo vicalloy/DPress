@@ -5,6 +5,7 @@ from django.utils.safestring import mark_safe
 
 from dpress.helper import tl_markdown
 from dpress.models import Post
+from dpress.models import Category
 
 register = Library()
 
@@ -25,4 +26,11 @@ def month_links(template="dpress/widgets/monthlinks.html"):
     return {
             "template": template,
             'dates': Post.objects.filter(status=2).dates('publish', 'month')[:12],
+            }
+
+@register.inclusion_tag("dpress/tags/dummy.html")
+def categorys(template="dpress/widgets/categorys.html"):
+    return {
+            "template": template,
+            'categorys': Category.objects.order_by("title"),
             }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 03:47-0500\n"
+"POT-Creation-Date: 2012-08-21 12:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:13
-msgid "Draft"
-msgstr "草稿"
-
-#: models.py:14
-msgid "Public"
-msgstr "发布"
-
-#: models.py:16
+#: models.py:11 models.py:34
 msgid "title"
 msgstr "标题"
 
-#: models.py:17
+#: models.py:12 models.py:35
 msgid "slug"
 msgstr ""
 
-#: models.py:19
+#: models.py:15
+msgid "category"
+msgstr "分类"
+
+#: models.py:16
+msgid "categorys"
+msgstr "分类"
+
+#: models.py:31
+msgid "Draft"
+msgstr "草稿"
+
+#: models.py:32
+msgid "Public"
+msgstr "发布"
+
+#: models.py:37
 msgid "body"
 msgstr "正文"
 
-#: models.py:20
+#: models.py:38
 msgid "status"
 msgstr "状态"
 
-#: models.py:21
+#: models.py:39
 msgid "publish"
 msgstr "发布"
 
-#: models.py:22
+#: models.py:40
 msgid "created at"
 msgstr "创建时间"
 
-#: models.py:23
+#: models.py:41
 msgid "updated at"
 msgstr "更新时间"
 
-#: models.py:27
+#: models.py:46
 msgid "post"
 msgstr "文章"
 
-#: models.py:28
+#: models.py:47
 msgid "posts"
 msgstr "文章"
 
@@ -65,7 +73,7 @@ msgstr "文章"
 msgid "Posts Tagged"
 msgstr "标签"
 
-#: templates/dpress/index.html:13 templates/dpress/widgets/monthlinks.html:2
+#: templates/dpress/index.html:13 templates/dpress/widgets/monthlinks.html:3
 msgid "Archives"
 msgstr "归档"
 
@@ -81,18 +89,22 @@ msgstr ""
 msgid "Tagged as"
 msgstr "标签"
 
-#: templates/dpress/widgets/firendlinks.html:2
+#: templates/dpress/widgets/categorys.html:3
+msgid "Category"
+msgstr "分类"
+
+#: templates/dpress/widgets/firendlinks.html:3
 msgid "Firend Links"
 msgstr "友情链接"
 
-#: templates/dpress/widgets/lastposts.html:2
+#: templates/dpress/widgets/lastposts.html:3
 msgid "Latest Posts"
 msgstr "最新文章"
 
-#: templates/dpress/widgets/pages.html:2
+#: templates/dpress/widgets/pages.html:3
 msgid "Pages"
 msgstr "页面"
 
-#: templates/dpress/widgets/tags.html:4
+#: templates/dpress/widgets/tags.html:5
 msgid "Tags"
 msgstr "标签"

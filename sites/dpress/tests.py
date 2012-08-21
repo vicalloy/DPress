@@ -17,6 +17,10 @@ class ViewsSimpleTest(ViewsBaseCase):
         resp = self.client.get(reverse('dpress_month_archive', args=("2012", "8", )))
         self.assertEqual(resp.status_code, 200)
 
+    def test_category(self):
+        resp = self.client.get(reverse('dpress_category', args=("default", )))
+        self.assertEqual(resp.status_code, 200)
+
     def test_tag(self):
         resp = self.client.get(reverse('dpress_tag', args=("testtag", )))
         self.assertEqual(resp.status_code, 200)
@@ -32,4 +36,3 @@ class ViewsSimpleTest(ViewsBaseCase):
     def test_feed(self):
         resp = self.client.get(reverse('dpress_feeds'))
         self.assertEqual(resp.status_code, 200)
-

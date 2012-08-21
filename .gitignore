@@ -3,3 +3,4 @@
 *.sqlite
 env/
 sites/media
+sites/collectedstatic

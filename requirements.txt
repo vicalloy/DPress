@@ -1,3 +1,4 @@
+PIL
 Django>=1.4
 south
 dj-scaffold
