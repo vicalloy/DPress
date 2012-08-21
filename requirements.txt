@@ -10,4 +10,4 @@ django-taggit-templatetags
 django-pagination
 Markdown
 Pygments
-git+git://github.com/vicalloy/django-helper.git
+django-helper>=0.8.3
