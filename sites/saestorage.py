@@ -52,7 +52,7 @@ class SaeStorage(Storage):
         else:
             content_str = content.read()
         #for fake tempfile
-        if not content_str and hasattr("file"):
+        if not content_str and hasattr(content, "file"):
             try:
                 content_str = content.file.getvalue()
             except:
