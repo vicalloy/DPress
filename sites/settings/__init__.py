@@ -7,5 +7,5 @@ exec 'from %s import *' % SETTINGS
 
 try:
     from local import *
-except:
+except ImportError:
     pass
