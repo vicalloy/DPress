@@ -4,7 +4,6 @@ import imp
 import os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, '../requirement'))
 
 try:
     imp.find_module('settings') # Assumed to be in the same directory.

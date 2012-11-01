@@ -18,7 +18,7 @@
     <p class="related">
       {% trans "Tagged as" %}:
       {% for o in post.tags.all %}
-        <a href="#"> 
+        <a href="{% url dpress_tag o.name %}"> 
           {{ o }} 
         </a>
       {% endfor %}
