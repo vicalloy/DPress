@@ -24,9 +24,9 @@ DPress is a simple blog powered by Django.
 ## run on Django dev server
 
 + Clone DPress repository from git://github.com/vicalloy/DPress.git
-+ use scripts/create_env.py to create DPress environment(create python virtualenv, install requirements libs)
-+ use scriptsenv.bat(source env.rc) to start DPress environment.
-+ $mg(%mg% in windows) is a shortcut for "python manage.py "
++ install virtualenv: pip install virtualenv 
++ use scripts env.rc(source env.rc) to create and start DPress environment.
++ $mg is a shortcut for "python manage.py "
 + $mg syncdb
 + $mg migrate
 + $mg runserver
@@ -37,3 +37,9 @@ DPress is a simple blog powered by Django.
 
 + copy sites/settings/pre.sample to sites/settings/pre.py and config it.
 + copy sites/settings/local.sample to sites/settings/local.py and config it.
+
+## use theme moment
+
++ moment is a theme designed by [Hsiaoming Yang](http://lepture.com)
++ copy sites/settings/pre.sample to sites/settings/pre.py
++ modify pre.py and set "SETTINGS = 'theme_moment'"
