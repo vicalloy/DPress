@@ -1,0 +1,85 @@
+{% load i18n %}
+{% load djangohelper_tags %}
+{% load dpress_tags %}
+<!DOCTYPE HTML>
+<html lang="{% get_setting "DPRESS_LANG" "en" %}">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% get_setting "DPRESS_TITLE" %}{% endblock %}</title>
+        <script>if (top !== self) top.location = self.location;</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/moment/style.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/moment/pygments.css" />
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="{{ STATIC_URL }}dpress/themes/moment/html5shiv.js"></script>
+        <![endif]-->
+        {% block afterstyle %}{% endblock %}
+    </head>
+    <body>
+        <header id="header">
+            {% block header %}
+            <h1 id="brand"><a href="{% url dpress_index %}">{% get_setting "DPRESS_TITLE" %}</a></h1>
+            {% block nav %}
+            <nav id="nav" role="navigation">
+                <a href="{% url dpress_index %}">首页</a>
+                {% get_setting "DPRESS_SHOW_CATEGORYS_NAV" "" "DPRESS_SHOW_CATEGORYS_NAV" %}
+                {% get_setting "DPRESS_NAV" "" "DPRESS_NAV" %}
+                {% if DPRESS_SHOW_CATEGORYS_NAV %}
+                {% categorys %}
+                {% endif %}
+                {% for item in DPRESS_NAV %}
+                <a href="{{item.link}}">{{item.name}}</a>
+                {% endfor %}
+            </nav>
+            {% endblock %}
+            {% endblock %}
+        </header>
+
+        <div id="main">
+            <div class="container">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <footer id="footer">
+            {% block footer %}
+            <hr class="end" />
+            {% get_setting "DPRESS_ELSEWHERE" "" "DPRESS_ELSEWHERE" %}
+            {% if DPRESS_ELSEWHERE %}
+            <nav class="elsewhere">
+                {% for item in DPRESS_ELSEWHERE %}
+                <a href="{{item.link}}">{{item.name}}</a>
+                {% endfor %}
+            </nav>
+            {% endif %}
+            <p class="copyright">
+            <span class="software">
+                Powered by <a href="https://github.com/vicalloy/DPress">DPress</a>,
+                Theme <a href="https://github.com/lepture/liquidluck-theme-moment" rel="nofollow">moment</a> 
+                by <a href="http://lepture.com">Hsiaoming Yang</a>
+            </span>
+            </p>
+            {% endblock %}
+        </footer>
+
+        {% block beforejs %}{% endblock %}
+        <script type="text/javascript" src="{{ STATIC_URL }}dpress/themes/moment/mobile.js"></script>
+        {% block afterjs %}{% endblock %}
+        {% block ga %}
+            {% get_setting "GOOGLE_ANALYTICS_CODE" "" "GOOGLE_ANALYTICS_CODE" %}
+            {% if GOOGLE_ANALYTICS_CODE %}
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_CODE }}']);
+                    _gaq.push(['_trackPageview']);
+                    (function() {
+                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+            {% endif %}
+        {% endblock %}
+    </body>
+</html>

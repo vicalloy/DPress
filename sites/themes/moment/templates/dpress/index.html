@@ -1,0 +1,22 @@
+{% extends "dpress/layout.html" %}
+
+{% load i18n %}
+{% load pagination_tags %}
+{% load dpress_tags %}
+{% load djangohelper_tags %}
+
+{% block main %}
+<ul class="entry-list">
+    {% autopaginate posts %}
+    {% for o in posts %}
+    <li class="entry-item">
+        <time class="updated">{{o.publish|date:"Y-m-d H:i"}}</time>
+        <a href="{{o.get_absolute_url}}">{{o}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% if pagination.has_prev or pagination.has_next %}
+<hr class="end" />
+{% paginate %}
+{% endif %}
+{% endblock %}

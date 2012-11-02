@@ -1,0 +1,46 @@
+{% extends "dpress/layout.html" %}
+
+{% load i18n %}
+{% load dpress_tags %}
+{% load djangohelper_tags %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block main %}
+<div class="hentry">
+    <h1 class="entry-title">{{post}}</h1>
+    <div class="entry-meta">
+        <time class="updated">
+            {{post.publish|date:"Y-m-d H:i"}}
+        </time>
+        <span class="author vcard">
+            by <span class="fn">{{post.author}}</span>
+        </span>
+    </div>
+    <div class="entry-content">
+        {{ post.body|md }}
+    </div>
+
+    <div class="entry-tags">
+      {% for o in post.tags.all %}
+        <a href="{% url dpress_tag o.name %}"> 
+          {{ o }} 
+        </a>
+      {% endfor %}
+    </div>
+
+    {% get_setting "DISQUS_SHORTNAME" "" "DISQUS_SHORTNAME" %}
+    {% if DISQUS_SHORTNAME %}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = '{{DISQUS_SHORTNAME}}';
+        var disqus_title = '{{post.title}}';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    {% endif %}
+</div>
+{% endblock %}
