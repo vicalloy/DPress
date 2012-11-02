@@ -11,4 +11,4 @@ django-taggit-templatetags
 django-pagination
 Markdown
 Pygments
-django-helper>=0.8.3
+django-helper>=0.8.4
