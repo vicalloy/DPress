@@ -1,3 +1,0 @@
-#which settings to use
-#if "SETTINGS = 'production'" will use production.py
-SETTINGS = 'production' #'production','dev'
