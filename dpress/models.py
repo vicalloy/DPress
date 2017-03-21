@@ -39,7 +39,7 @@ class Post(models.Model):
     body = models.TextField(_('body'))
     status = models.IntegerField(_('status'), choices=STATUS_CHOICES, default=1)
     publish = models.DateTimeField(_('publish'), default=datetime.now)
-    created_at = models.DateTimeField(_('created at'), default=datetime.now)
+    created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     updated_at = models.DateTimeField(_('updated at'), auto_now=True)
     category = models.ForeignKey(
         Category, related_name="posts",
