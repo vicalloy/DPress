@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,16 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'grappelli.dashboard',
+    'grappelli',
+    'filebrowser',
+    'django.contrib.admin',
+
     'taggit',
     'el_pagination',
     'lbutils',
+    'pagedown',
 
     'dpress_site',
     'dpress',
@@ -131,3 +136,8 @@ DPRESS_SUBTITLE = 'DPRESS_SUBTITLE'
 DPRESS_DESCN = ''
 DISQUS_SHORTNAME = ''
 GOOGLE_ANALYTICS_CODE = ''
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+GRAPPELLI_INDEX_DASHBOARD = 'dpress_site.dashboard.CustomIndexDashboard'

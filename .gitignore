@@ -1,6 +1,6 @@
 *.pyc
 *.swp
 *.sqlite
+*.sqlite3
 env/
-sites/media
-sites/collectedstatic
+media/
