@@ -2,16 +2,19 @@
 import datetime
 import time
 
-from django.template import Context, Template
 from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
+from django.http import Http404
 
 import markdown
 
+
 def tl_markdown(md, no_p=False):
-    ret = markdown.markdown(force_unicode(md),
-        ['fenced_code', 'codehilite'], safe_mode=False) #'nl2br',
+    ret = markdown.markdown(
+        force_unicode(md),
+        ['fenced_code', 'codehilite'], safe_mode=False)
     return mark_safe(ret)
+
 
 def archive_month_filter(year, month, queryset, date_field):
     try:

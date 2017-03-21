@@ -6,8 +6,9 @@ from taggit.models import Tag
 from .models import Post
 from .helper import archive_month_filter
 
+
 def index(request, username=None, tag=None, year=None, month=None,
-        category=None, template_name="dpress/index.html"):
+          category=None, template_name="dpress/index.html"):
     posts = Post.objects.filter(status=2)
     ctx = {}
     if tag:
@@ -26,10 +27,12 @@ def index(request, username=None, tag=None, year=None, month=None,
     ctx['posts'] = posts
     return render(request, template_name, ctx)
 
+
 def post(request, year, month, slug,
          template_name="dpress/post.html"):
-    post = get_object_or_404(Post, slug=slug, publish__year=int(year),
-            publish__month=int(month), status=2)
+    post = get_object_or_404(
+        Post, slug=slug, publish__year=int(year),
+        publish__month=int(month), status=2)
     ctx = {}
     ctx['post'] = post
     return render(request, template_name, ctx)
