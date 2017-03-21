@@ -3,7 +3,7 @@
   <h3>{% trans "Category" %}</h3>
 	<ul class="linklist">
 	{% for c in categorys %}
-  <li><a href="{% url dpress_category c.slug %}">{{ c.title }}({{ c.posts.count }})</a></li>
+  <li><a href="{% url 'dpress_category' c.slug %}">{{ c.title }}({{ c.posts.count }})</a></li>
 	{% endfor %}
 	</ul>
 </div>

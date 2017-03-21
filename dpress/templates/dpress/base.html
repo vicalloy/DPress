@@ -1,10 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
   "http://www.w3.org/TR/html4/strict.dtd">
 {% load i18n %}
-{% load djangohelper_tags %}
+{% load lbutils %}
+
 {% get_setting "DPRESS_TITLE" "" "DPRESS_TITLE" %}
 {% get_setting "DPRESS_SUBTITLE" "" "DPRESS_SUBTITLE" %}
 {% get_setting "DPRESS_DESCN" "" "DPRESS_DESCN" %}
+
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -14,7 +16,7 @@
   <body>
     <div class="header_container">
       <div class="header">
-        <h1><a href="{% url dpress_index %}">{{DPRESS_TITLE}}</a></h2>
+        <h1><a href="{% url 'dpress_index' %}">{{DPRESS_TITLE}}</a></h2>
         <h2>{{DPRESS_SUBTITLE}}</h2>
         <h3 class="description">{{DPRESS_DESCN}}</h3>
       </div>

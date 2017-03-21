@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib import admin
 
 from .models import Post, Category
-from .widgets import EpicEditorWidget
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -11,9 +10,9 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'body', )
     # raw_id_fields = ('author',)
     # list_filter = ('category',)
-    formfield_overrides = {
-        models.TextField: {'widget': EpicEditorWidget},
-    }
+    # formfield_overrides = {
+    # models.TextField: {'widget': EpicEditorWidget},
+    # }
 
 
 class CategoryAdmin(admin.ModelAdmin):

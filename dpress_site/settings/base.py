@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'taggit',
+    'el_pagination',
+    'lbutils',
+
+    'dpress_site',
+    'dpress',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DPRESS_TITLE = 'D_TITLE'
+DPRESS_SUBTITLE = 'DPRESS_SUBTITLE'
+DPRESS_DESCN = ''
+DISQUS_SHORTNAME = ''
+GOOGLE_ANALYTICS_CODE = ''
