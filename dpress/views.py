@@ -19,7 +19,7 @@ def index(request, username=None, tag=None, year=None, month=None,
 
     if category:
         posts = posts.filter(category__slug=category)
-        
+
     if username:
         posts = posts.filter(author__username=username)
     posts = posts.order_by("-publish")
@@ -28,7 +28,7 @@ def index(request, username=None, tag=None, year=None, month=None,
 
 def post(request, year, month, slug,
          template_name="dpress/post.html"):
-    post = get_object_or_404(Post, slug=slug, publish__year=int(year), 
+    post = get_object_or_404(Post, slug=slug, publish__year=int(year),
             publish__month=int(month), status=2)
     ctx = {}
     ctx['post'] = post

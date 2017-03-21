@@ -42,7 +42,7 @@ class Post(models.Model):
     category        = models.ForeignKey(Category, related_name="posts", \
                         blank=True, null=True, default=None, on_delete=models.SET_NULL)
     tags            = TaggableManager(blank=True)
-    
+
     class Meta:
         verbose_name        = _('post')
         verbose_name_plural = _('posts')

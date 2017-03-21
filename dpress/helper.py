@@ -9,8 +9,8 @@ from django.utils.safestring import mark_safe
 import markdown
 
 def tl_markdown(md, no_p=False):
-    ret = markdown.markdown(force_unicode(md), 
-        ['fenced_code', 'codehilite'], safe_mode=False) #'nl2br', 
+    ret = markdown.markdown(force_unicode(md),
+        ['fenced_code', 'codehilite'], safe_mode=False) #'nl2br',
     return mark_safe(ret)
 
 def archive_month_filter(year, month, queryset, date_field):
