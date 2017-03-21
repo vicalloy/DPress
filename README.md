@@ -27,9 +27,3 @@ DPress is a simple blog powered by Django.
 ## config
 
 + copy dpress_site/settings/local.sample to dpress_site/settings/local.py and config it.
-
-## use theme moment
-
-+ moment is a theme designed by [Hsiaoming Yang](http://lepture.com)
-+ copy sites/settings/pre.sample to sites/settings/pre.py
-+ modify pre.py and set "SETTINGS = 'theme_moment'"
