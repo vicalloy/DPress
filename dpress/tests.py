@@ -2,10 +2,10 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 
-class ViewsBaseCase(TestCase):
 
-    fixtures = ['test_dpress_users.json',
-            'test_dpress_posts.json']
+class ViewsBaseCase(TestCase):
+    fixtures = ['test_dpress_users.json', 'test_dpress_posts.json']
+
 
 class ViewsSimpleTest(ViewsBaseCase):
 
