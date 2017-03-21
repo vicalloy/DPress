@@ -23,7 +23,7 @@
             <h1 id="brand"><a href="{% url 'dpress_index' %}">{% get_setting "DPRESS_TITLE" %}</a></h1>
             {% block nav %}
             <nav id="nav" role="navigation">
-                <a href="{% url 'dpress_index' %}">首页</a>
+                <a href="{% url 'dpress_index' %}">{% trans "Home" %}</a>
                 {% get_setting "DPRESS_SHOW_CATEGORYS_NAV" "" "DPRESS_SHOW_CATEGORYS_NAV" %}
                 {% get_setting "DPRESS_NAV" "" "DPRESS_NAV" %}
                 {% if DPRESS_SHOW_CATEGORYS_NAV %}
