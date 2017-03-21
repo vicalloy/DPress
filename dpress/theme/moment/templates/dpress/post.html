@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {% load dpress_tags %}
-{% load djangohelper_tags %}
+{% load lbutils %}
 
 {% block title %} {{post.title}} {% endblock %}
 
@@ -23,7 +23,7 @@
 
     <div class="entry-tags">
       {% for o in post.tags.all %}
-        <a href="{% url dpress_tag o.name %}"> 
+        <a href="{% url 'dpress_tag' o.name %}"> 
           {{ o }} 
         </a>
       {% endfor %}

@@ -1,4 +1,4 @@
 {% for c in categorys %}
-<a href="{% url dpress_category c.slug %}">{{ c.title }}</a>
+  <a href="{% url 'dpress_category' c.slug %}">{{ c.title }}</a>
 {% endfor %}
 

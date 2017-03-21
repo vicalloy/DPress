@@ -1,13 +1,13 @@
 {% extends "dpress/layout.html" %}
 
 {% load i18n %}
-{% load pagination_tags %}
+{% load el_pagination_tags %}
 {% load dpress_tags %}
-{% load djangohelper_tags %}
+{% load lbutils %}
 
 {% block main %}
 <ul class="entry-list">
-    {% autopaginate posts %}
+    {% paginate posts %}
     {% for o in posts %}
     <li class="entry-item">
         <time class="updated">{{o.publish|date:"Y-m-d H:i"}}</time>
@@ -15,8 +15,10 @@
     </li>
     {% endfor %}
 </ul>
+
 {% if pagination.has_prev or pagination.has_next %}
-<hr class="end" />
-{% paginate %}
+  <hr class="end" />
+  {% show_pages %}
 {% endif %}
+
 {% endblock %}

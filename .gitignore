@@ -2,5 +2,6 @@
 *.swp
 *.sqlite
 *.sqlite3
+dpress_site/settings/local.py
 env/
 media/

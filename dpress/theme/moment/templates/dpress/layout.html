@@ -1,6 +1,8 @@
 {% load i18n %}
-{% load djangohelper_tags %}
+{% load lbutils %}
 {% load dpress_tags %}
+{% load staticfiles %}
+
 <!DOCTYPE HTML>
 <html lang="{% get_setting "DPRESS_LANG" "en" %}">
     <head>
@@ -8,20 +10,20 @@
         <title>{% block title %}{% get_setting "DPRESS_TITLE" %}{% endblock %}</title>
         <script>if (top !== self) top.location = self.location;</script>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/moment/style.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}dpress/themes/moment/pygments.css" />
+        <link rel="stylesheet" href="{% static 'dpress/themes/moment/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'dpress/themes/moment/pygments.css' %}" />
         <!--[if lt IE 9]>
-        <script type="text/javascript" src="{{ STATIC_URL }}dpress/themes/moment/html5shiv.js"></script>
+        <script type="text/javascript" src="{% static 'dpress/themes/moment/html5shiv.js' %}"></script>
         <![endif]-->
         {% block afterstyle %}{% endblock %}
     </head>
     <body>
         <header id="header">
             {% block header %}
-            <h1 id="brand"><a href="{% url dpress_index %}">{% get_setting "DPRESS_TITLE" %}</a></h1>
+            <h1 id="brand"><a href="{% url 'dpress_index' %}">{% get_setting "DPRESS_TITLE" %}</a></h1>
             {% block nav %}
             <nav id="nav" role="navigation">
-                <a href="{% url dpress_index %}">首页</a>
+                <a href="{% url 'dpress_index' %}">首页</a>
                 {% get_setting "DPRESS_SHOW_CATEGORYS_NAV" "" "DPRESS_SHOW_CATEGORYS_NAV" %}
                 {% get_setting "DPRESS_NAV" "" "DPRESS_NAV" %}
                 {% if DPRESS_SHOW_CATEGORYS_NAV %}
@@ -64,7 +66,7 @@
         </footer>
 
         {% block beforejs %}{% endblock %}
-        <script type="text/javascript" src="{{ STATIC_URL }}dpress/themes/moment/mobile.js"></script>
+        <script type="text/javascript" src="{% static 'dpress/themes/moment/mobile.js' %}"></script>
         {% block afterjs %}{% endblock %}
         {% block ga %}
             {% get_setting "GOOGLE_ANALYTICS_CODE" "" "GOOGLE_ANALYTICS_CODE" %}
