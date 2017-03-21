@@ -13,17 +13,28 @@ DPress is a simple blog powered by Django.
 + RSS
 + Tags
 
-## run on Django dev server
+## Run on Django dev server
 
 + Clone DPress repository from git://github.com/vicalloy/DPress.git
 + install virtualenv: pip install virtualenv 
 + use scripts env.rc(`source env.rc`) to create and start DPress environment.
-+ $mg is a shortcut for "python manage.py "
-+ $mg migrate
-+ $mg runserver
++ `$mg` is a shortcut for `python manage.py`
++ `$mg migrate`
++ `$mg runserver`
 + DPress Admin http://127.0.0.1:8000/admin/
 + DPress http://127.0.0.1:8000/
 
-## config
+## Config
 
-+ copy dpress_site/settings/local.sample to dpress_site/settings/local.py and config it.
++ copy `dpress_site/settings/local.sample` to `dpress_site/settings/local.py` and config it.
+
+## Screenshots
+
+### Default Theme
+
+
+![Default Theme](https://raw.githubusercontent.com/vicalloy/dpress/master/screenshots/default.gif)
+
+### Moment
+
+![Moment](https://raw.githubusercontent.com/vicalloy/dpress/master/screenshots/moment.gif)
