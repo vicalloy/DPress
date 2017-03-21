@@ -7,6 +7,9 @@ DPRESS_DESCN = ''
 DISQUS_SHORTNAME = ''
 GOOGLE_ANALYTICS_CODE = ''
 
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+
 ####### settings for theme 'moment' #######
 
 # uncomment it if you want to use theme 'moment'
