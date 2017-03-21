@@ -1,7 +1,7 @@
 MGP = 
 PY = ./env/bin/python
 PIP = ./env/bin/pip
-MG = $(PY) ./sites/manage.py
+MG = $(PY) ./manage.py
 
 mg: 
 	$(MG) $(MGP) 
