@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 
 from .models import Post
 
+
 class LatestDPressPostFeed(Feed):
     title = getattr(settings, 'DPRESS_TITLE', '')
     description = getattr(settings, 'DPRESS_DESCN', '')

@@ -1,0 +1,13 @@
+{% extends "dpress/layout.html" %}
+{% load dpress_tags %}
+
+{% block head_title %} {{flatpage.title}} {% endblock %}
+
+{% block main %}
+<div class="hentry">
+    <h1 class="entry-title">{{flatpage.title}}</h1>
+    <div class="entry-content">
+        {{ flatpage.content|md }}
+    </div>
+</div>
+{% endblock %}

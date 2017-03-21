@@ -1,7 +1,22 @@
 from .production import *  # NOQA
 
-DPRESS_TITLE = 'D_TITLE'
-DPRESS_SUBTITLE = 'DPRESS_SUBTITLE'
+DPRESS_TITLE = 'Title for you blog'
+DPRESS_SUBTITLE = 'Sub title for you blog'
 DPRESS_DESCN = ''
+
 DISQUS_SHORTNAME = ''
 GOOGLE_ANALYTICS_CODE = ''
+
+####### settings for theme 'moment' #######
+
+# uncomment it if you want to use theme 'moment'
+# INSTALLED_APPS = ['dpress.theme.moment'] + INSTALLED_APPS # NOQA
+
+# show categorys in NAV
+DPRESS_SHOW_CATEGORYS_NAV = True
+
+# nav in header
+DPRESS_NAV = [{"name": u"@GitHub", "link": "https://github.com/vicalloy/"}, ]
+
+# nav in footer
+DPRESS_ELSEWHERE = [{"name": u"@GitHub", "link": "https://github.com/vicalloy/"}, ]
