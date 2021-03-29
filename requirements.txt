@@ -1,6 +1,6 @@
 Django>=1.10,<2.0
 Markdown==2.6.8
-Pygments==2.2.0
+Pygments==2.7.4
 django_taggit==0.22.0
 django-el-pagination==3.0.1
 django-lbutils==1.0.1
